@@ -1,0 +1,14 @@
+.diagram{
+    display: flex;
+    flex: 1;
+}
+.diagram__item{
+    margin-left: 20px;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
