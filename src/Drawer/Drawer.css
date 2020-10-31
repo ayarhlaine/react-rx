@@ -1,3 +1,17 @@
 .List{
     width: 300px;
 }
+.drawer__logo {
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.drawer__logo>img{
+    width: 50px;
+    object-fit: contain;
+}
+.drawer__logo>h3{
+   margin-left: 5px;
+}

@@ -9,6 +9,10 @@ import './Drawer.css';
 const Drawer = ({ toggle, toggleDrawer, onMenuSelect }) => {
     return (
         <DrawerMenu anchor={'left'} open={toggle} onClose={() => toggleDrawer(false)}>
+            <div className="drawer__logo" onClick={() => onMenuSelect('welcome')}>
+                <img src="https://gblobscdn.gitbook.com/spaces%2F-LwY_OXUQHvmdEoy0xNa%2Favatar.png?alt=media" alt="RX JS Logo"/>
+                <h3>{process.env.REACT_APP_WEBSITE_NAME}</h3>
+            </div>
             <List 
             subheader={
                 <ListSubheader component="div" id="nested-list-subheader">
