@@ -4,7 +4,7 @@
     justify-content: center;
 }
 .welcomeDiagram__item{
-    margin-left: 20px;
+    margin-right: 5px;
     padding: 10px 20px;
     display: flex;
     align-items: center;
