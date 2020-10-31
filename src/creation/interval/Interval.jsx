@@ -29,6 +29,19 @@ const Interval = () => {
         <div className="interval">
             <h4>interval</h4>
             <Diagram values={data}/>
+            <br/>
+            <div className="code">
+                <code>
+                    const observable$ = interval(1000).pipe(take(5));
+                    <br/>
+                    <br/>
+                    observable$.subscribe((val) ={'>'} {'{'}
+                    <br/>
+                        &nbsp;setData(current ={'>'}  [...current, val]){';'}
+                    <br/>
+                    {'}'})
+                </code>
+            </div>
             <Footer link={link} onReplay={onReplay}/>
         </div>
     )
