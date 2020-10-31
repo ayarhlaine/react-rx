@@ -1,0 +1,14 @@
+.welcomeDiagram{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+.welcomeDiagram__item{
+    margin-left: 20px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}

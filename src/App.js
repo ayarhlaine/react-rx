@@ -4,6 +4,7 @@ import TopBar from './TopBar/TopBar';
 import Drawer from './Drawer/Drawer';
 import './App.css';
 import Interval from './creation/interval/Interval';
+import Welcome from './welcome/Welcome';
 function App() {
   const [toggle, setToggle] = useState(false);
   const [selectedMenu, setSelectedMenu] = useState('welcome');
@@ -18,6 +19,10 @@ function App() {
      onMenuSelect={(menu) => setSelectedMenu(menu)}
      />
      <div className="app__body">
+       {
+         selectedMenu === 'welcome' &&
+          <Welcome/>
+       }
        {
          selectedMenu === 'from' &&
           <From/>

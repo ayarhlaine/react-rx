@@ -4,7 +4,7 @@ import './Footer.css';
 const Footer = ({ link, onReplay }) => {
     return (
         <div className="footer">
-            <a href={link} className="href">View Code</a>
+            <a href={link} rel="noreferrer" target='_blank'>View Code</a>
             <Button variant="contained" color="primary" onClick={onReplay}>
             <ReplyIcon />
             Replay 
