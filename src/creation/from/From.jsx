@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { from, of} from 'rxjs';
+import { from, of } from 'rxjs';
 import { delay,concatMap } from 'rxjs/operators';
 import Diagram from '../../diagrams/diagram/Diagram';
 import './From.css';

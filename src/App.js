@@ -3,6 +3,7 @@ import From from './creation/from/From';
 import TopBar from './TopBar/TopBar';
 import Drawer from './Drawer/Drawer';
 import './App.css';
+import Interval from './creation/interval/Interval';
 function App() {
   const [toggle, setToggle] = useState(false);
   const [selectedMenu, setSelectedMenu] = useState('welcome');
@@ -20,6 +21,10 @@ function App() {
        {
          selectedMenu === 'from' &&
           <From/>
+       }
+       {
+         selectedMenu === 'interval' &&
+          <Interval/>
        }
      </div>
     </div>
