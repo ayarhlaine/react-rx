@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { from, of} from 'rxjs';
 import { delay,concatMap } from 'rxjs/operators';
 import Diagram from '../../diagrams/diagram/Diagram';
-import ReplyIcon from '@material-ui/icons/Reply';
-import Button from '@material-ui/core/Button';
 import './From.css';
+import { creationMenu } from '../../menu/menu';
+import Footer from '../../diagrams/footer/Footer';
 function From() {
   const [data, setData] = useState([]);
   const [replay, setReplay] = useState(false);
@@ -24,6 +24,7 @@ function From() {
     setData([]);
     setReplay(!replay);
   }
+  const { link } = creationMenu.from;
   return (
     <div className="From">
         <h4>from</h4>
@@ -41,13 +42,7 @@ function From() {
                 {'}'})
             </code>
         </div>
-        <div className="footer">
-          <a href="https://github.com/ayarhlaine" className="href">View Code</a>
-          <Button variant="contained" color="primary" onClick={onReplay}>
-            <ReplyIcon />
-            Replay 
-          </Button>
-        </div>
+        <Footer link={link} onReplay={onReplay}/>
     </div>
   );
 }

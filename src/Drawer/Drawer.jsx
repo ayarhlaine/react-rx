@@ -16,11 +16,13 @@ const Drawer = ({ toggle, toggleDrawer, onMenuSelect }) => {
                 </ListSubheader>
               }
             className='List'>
-                {creationMenu.map(({ name }, index) => (
-                <ListItem button key={name} onClick={() => onMenuSelect(name)}>
-                    <ListItemText primary={name} />
-                </ListItem>
-                ))}
+                {
+                    Object.entries(creationMenu).map(([key, { name }]) => (
+                        <ListItem button key={key} onClick={() => onMenuSelect(name)}>
+                            <ListItemText primary={name} />
+                        </ListItem>
+                    ))
+                }
             </List>
             <Divider />
         </DrawerMenu>
