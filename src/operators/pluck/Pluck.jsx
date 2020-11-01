@@ -9,7 +9,6 @@ function Pluck() {
   const [data, setData] = useState([]);
   const [modifiedData, setModifiedData] = useState([]);
   const [replay, setReplay] = useState(false);
-  const seed = 0;
   useEffect(() => {
     const observable$ = from([
         {a:1},
