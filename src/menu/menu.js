@@ -8,3 +8,9 @@ export const creationMenu = {
         link: 'https://github.com/ayarhlaine'
     }
 };
+export const operatorMenu = {
+    map: {
+        name: 'map',
+        link: 'https://github.com/ayarhlaine'
+    }
+};

@@ -1,19 +1,13 @@
-.From {
+.Map{
     padding: 10px;
 }
-.code {
+.map__code{
     background-color: lightgray;
     color: black;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px;
-}
-.footer {
-   padding: 10px;
-   display: flex;
-   align-items: center;
-}
-.footer>button{
-    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }

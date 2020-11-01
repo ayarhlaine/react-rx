@@ -5,6 +5,7 @@ import Drawer from './Drawer/Drawer';
 import './App.css';
 import Interval from './creation/interval/Interval';
 import Welcome from './welcome/Welcome';
+import Map from './operators/map/Map';
 function App() {
   const [toggle, setToggle] = useState(false);
   const [selectedMenu, setSelectedMenu] = useState('welcome');
@@ -30,6 +31,10 @@ function App() {
        {
          selectedMenu === 'interval' &&
           <Interval/>
+       }
+       {
+         selectedMenu === 'map' &&
+          <Map/>
        }
      </div>
     </div>

@@ -5,7 +5,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import { creationMenu } from '../menu/menu';
+import { creationMenu, operatorMenu } from '../menu/menu';
 import './Drawer.css';
 const Drawer = ({ toggle, toggleDrawer, onMenuSelect }) => {
     return (
@@ -24,6 +24,22 @@ const Drawer = ({ toggle, toggleDrawer, onMenuSelect }) => {
                 className='List'>
                     {
                         Object.entries(creationMenu).map(([key, { name }]) => (
+                            <ListItem button key={key} onClick={() => onMenuSelect(name)}>
+                                <ListItemText primary={name} />
+                            </ListItem>
+                        ))
+                    }
+                </List>
+                <Divider />
+                <List 
+                subheader={
+                    <ListSubheader component="div" id="nested-list-subheader">
+                    Operators
+                    </ListSubheader>
+                }
+                className='List'>
+                    {
+                        Object.entries(operatorMenu).map(([key, { name }]) => (
                             <ListItem button key={key} onClick={() => onMenuSelect(name)}>
                                 <ListItemText primary={name} />
                             </ListItem>
