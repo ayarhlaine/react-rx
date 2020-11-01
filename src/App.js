@@ -8,6 +8,7 @@ import Welcome from './welcome/Welcome';
 import Map from './operators/map/Map';
 import Scan from './operators/scan/Scan';
 import Reduce from './operators/reduce/Reduce';
+import Pluck from './operators/pluck/Pluck';
 function App() {
   const [toggle, setToggle] = useState(false);
   const [selectedMenu, setSelectedMenu] = useState('welcome');
@@ -45,6 +46,10 @@ function App() {
        {
          selectedMenu === 'reduce' &&
           <Reduce/>
+       }
+       {
+         selectedMenu === 'pluck' &&
+          <Pluck/>
        }
      </div>
     </div>

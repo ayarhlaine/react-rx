@@ -21,4 +21,8 @@ export const operatorMenu = {
         name: 'reduce',
         link: 'https://github.com/ayarhlaine'
     },
+    pluck: {
+        name: 'pluck',
+        link: 'https://github.com/ayarhlaine'
+    },
 };
