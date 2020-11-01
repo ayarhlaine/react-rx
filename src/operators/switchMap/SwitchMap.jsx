@@ -1,34 +1,27 @@
 import { useEffect, useState } from 'react';
 import { from, of } from 'rxjs';
-import { delay,concatMap, pluck } from 'rxjs/operators';
+import { delay,concatMap, switchMap } from 'rxjs/operators';
 import Diagram from '../../diagrams/diagram/Diagram';
-import './Pluck.css';
+import './SwitchMap.css';
 import { operatorMenu } from '../../menu/menu';
 import Footer from '../../diagrams/footer/Footer';
-function Pluck() {
+function SwitchMap() {
   const [data, setData] = useState([]);
   const [modifiedData, setModifiedData] = useState([]);
   const [replay, setReplay] = useState(false);
-  const seed = 0;
   useEffect(() => {
-    const observable$ = from([
-        {a:1},
-        {a:2},
-        {a:3},
-        {a:4},
-        {a:5},
-    ]);
-    const pluckedObservable$ = observable$.pipe(
-        pluck('a'),
+    const observable$ = from([1, 2, 3, 4, 5]);
+    const scannedObservable$ = observable$.pipe(
+        switchMap((val) => of(val, val * 2, val * 3)),
         concatMap((val) => of(val).pipe(delay(1000)))
     );
     const delayObservable$ = observable$.pipe(
-        concatMap((val) => of(JSON.stringify(val)).pipe(delay(1000)))
+        concatMap((val) => of(val).pipe(delay(1000)))
     );
     const subscription = delayObservable$.subscribe((val) => {
         setData(current =>  [...current, val]);
     });
-    const secondSubscription = pluckedObservable$.subscribe((val) => {
+    const secondSubscription = scannedObservable$.subscribe((val) => {
         setModifiedData(current =>  [...current, val]);
     });
     return () => {
@@ -41,23 +34,23 @@ function Pluck() {
     setModifiedData([]);
     setReplay(!replay);
   }
-  const { link } = operatorMenu.pluck;
+  const { link } = operatorMenu.switchMap;
   return (
-    <div className="Pluck">
-        <h4>pluck</h4>
+    <div className="SwitchMap">
+        <h4>switchMap</h4>
         <Diagram values={data}/>
         <div className="map__code">
             <code>
-            pluck('a')
+                switchMap((val) ={'>'} of(val, val * 2, val * 3))
             </code>
         </div>
         <Diagram values={modifiedData}/>
         <br/>
         <div className="code">
             <code>
-                const observable$ = from([{'{'}a: 1{'}'}, {'{'}a: 2{'}'}, {'{'}a: 3{'}'}, {'{'}a: 4{'}'}, {'{'}a: 5{'}'}]).pipe(
+                const observable$ = from([1, 2, 3, 4, 5]).pipe(
                     <br/>
-                    &nbsp;pluck('a')
+                    &nbsp;switchMap((val) ={'>'} of(val, val * 2, val * 3))
                     <br/>
                 );
                 <br/>
@@ -74,4 +67,4 @@ function Pluck() {
   );
 }
 
-export default Pluck;
+export default SwitchMap;

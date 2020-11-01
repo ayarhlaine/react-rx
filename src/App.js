@@ -9,6 +9,7 @@ import Map from './operators/map/Map';
 import Scan from './operators/scan/Scan';
 import Reduce from './operators/reduce/Reduce';
 import Pluck from './operators/pluck/Pluck';
+import SwitchMap from './operators/switchMap/SwitchMap';
 function App() {
   const [toggle, setToggle] = useState(false);
   const [selectedMenu, setSelectedMenu] = useState('welcome');
@@ -50,6 +51,10 @@ function App() {
        {
          selectedMenu === 'pluck' &&
           <Pluck/>
+       }
+       {
+         selectedMenu === 'switchMap' &&
+          <SwitchMap/>
        }
      </div>
     </div>

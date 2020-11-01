@@ -25,4 +25,8 @@ export const operatorMenu = {
         name: 'pluck',
         link: 'https://github.com/ayarhlaine'
     },
+    switchMap: {
+        name: 'switchMap',
+        link: 'https://github.com/ayarhlaine'
+    },
 };
