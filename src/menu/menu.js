@@ -1,32 +1,33 @@
+export const sourceLink = 'https://github.com/ayarhlaine/react-rx/tree/main/src/';
 export const creationMenu = {
     from: {
         name: 'from',
-        link: 'https://github.com/ayarhlaine'
+        link: sourceLink+'creation/from'
     },
     interval: {
         name: 'interval',
-        link: 'https://github.com/ayarhlaine'
+        link: sourceLink+'creation/interval'
     }
 };
 export const operatorMenu = {
     map: {
         name: 'map',
-        link: 'https://github.com/ayarhlaine'
+        link: sourceLink+'operators/map'
     },
     scan: {
         name: 'scan',
-        link: 'https://github.com/ayarhlaine'
+        link: sourceLink+'operators/scan'
     },
     reduce: {
         name: 'reduce',
-        link: 'https://github.com/ayarhlaine'
+        link: sourceLink+'operators/reduce'
     },
     pluck: {
         name: 'pluck',
-        link: 'https://github.com/ayarhlaine'
+        link: sourceLink+'operators/pluck'
     },
     switchMap: {
         name: 'switchMap',
-        link: 'https://github.com/ayarhlaine'
+        link: sourceLink+'operators/switchMap'
     },
 };
