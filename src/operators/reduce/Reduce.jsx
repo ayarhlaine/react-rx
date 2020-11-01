@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { from, of } from 'rxjs';
-import { delay,concatMap, scan } from 'rxjs/operators';
+import { delay,concatMap, reduce } from 'rxjs/operators';
 import Diagram from '../../diagrams/diagram/Diagram';
-import './Scan.css';
+import './Reduce.css';
 import { operatorMenu } from '../../menu/menu';
 import Footer from '../../diagrams/footer/Footer';
-function Scan() {
+function Reduce() {
   const [data, setData] = useState([]);
   const [modifiedData, setModifiedData] = useState([]);
   const [replay, setReplay] = useState(false);
@@ -13,7 +13,7 @@ function Scan() {
   useEffect(() => {
     const observable$ = from([1, 2, 3, 4, 5]);
     const scannedObservable$ = observable$.pipe(
-        scan((accumulator, current) => accumulator + current, seed),
+        reduce((accumulator, current) => accumulator + current, seed),
         concatMap((val) => of(val).pipe(delay(1000)))
     );
     const delayObservable$ = observable$.pipe(
@@ -35,14 +35,14 @@ function Scan() {
     setModifiedData([]);
     setReplay(!replay);
   }
-  const { link } = operatorMenu.scan;
+  const { link } = operatorMenu.reduce;
   return (
-    <div className="Scan">
-        <h4>scan</h4>
+    <div className="Reduce">
+        <h4>reduce</h4>
         <Diagram values={data}/>
         <div className="map__code">
             <code>
-                scan((accumulator, current) ={'>'} accumulator + current, seed)
+            reduce((accumulator, current) ={'>'} accumulator + current, seed)
             </code>
         </div>
         <Diagram values={modifiedData}/>
@@ -51,7 +51,7 @@ function Scan() {
             <code>
                 const observable$ = from([1, 2, 3, 4, 5]).pipe(
                     <br/>
-                    &nbsp;scan((accumulator, current) ={'>'} accumulator + current, seed)
+                    &nbsp;reduce((accumulator, current) ={'>'} accumulator + current, seed)
                     <br/>
                 );
                 <br/>
@@ -68,4 +68,4 @@ function Scan() {
   );
 }
 
-export default Scan;
+export default Reduce;

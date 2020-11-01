@@ -7,6 +7,7 @@ import Interval from './creation/interval/Interval';
 import Welcome from './welcome/Welcome';
 import Map from './operators/map/Map';
 import Scan from './operators/scan/Scan';
+import Reduce from './operators/reduce/Reduce';
 function App() {
   const [toggle, setToggle] = useState(false);
   const [selectedMenu, setSelectedMenu] = useState('welcome');
@@ -40,6 +41,10 @@ function App() {
        {
          selectedMenu === 'scan' &&
           <Scan/>
+       }
+       {
+         selectedMenu === 'reduce' &&
+          <Reduce/>
        }
      </div>
     </div>

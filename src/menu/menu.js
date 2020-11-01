@@ -16,5 +16,9 @@ export const operatorMenu = {
     scan: {
         name: 'scan',
         link: 'https://github.com/ayarhlaine'
-    }
+    },
+    reduce: {
+        name: 'reduce',
+        link: 'https://github.com/ayarhlaine'
+    },
 };
