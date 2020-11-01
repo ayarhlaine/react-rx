@@ -48,7 +48,9 @@ function Map() {
         <br/>
         <div className="code">
             <code>
-                const observable$ = from([1, 2, 3, 4, 5]);
+                const observable$ = from([1, 2, 3, 4, 5]).pipe(
+                    map(val ={'>'} val * 10)
+                );
                 <br/>
                 <br/>
                 observable$.subscribe((val) ={'>'} {'{'}
